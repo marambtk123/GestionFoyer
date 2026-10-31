@@ -14,8 +14,9 @@ import java.util.function.Function;
 @Repository
 
 public interface EtudiantRepository extends JpaRepository<Etudiant,Long> {
-    List<Etudiant> findBydateNaissance(LocalDate dateDebut, LocalDate dateFin);
-    List<Etudiant> findBydateNaissance(Date dFrom, Date dTo);
+    Etudiant findByCin(long cin);
+    List<Etudiant> findByNomEtAndPrenomEt(String nomEt, String prenomEt);
+    List<Etudiant> findByEcoleIgnoreCase(String ecole);
 
 
 }

@@ -14,13 +14,13 @@ public class ChambreRestController {
     @Autowired
     private IChamberService chamberService;
 
-    @GetMapping("/retrive-all-chambres")
+    @GetMapping("/retrieve-all-chambres")
     public List<Chambre> getChamberes() {
         List<Chambre> listChambres = chamberService.retrieveAllChambers();
         return listChambres;
     }
 
-    @GetMapping("/retrive-chambre/{chambre-id}")
+    @GetMapping("/retrieve-chambre/{chambre-id}")
     public Chambre retriveChambre(@PathVariable("chambre-id") Long chId) {
         Chambre chambre = chamberService.retrieveChambre(chId);
         return chambre;
@@ -32,6 +32,7 @@ public class ChambreRestController {
         return chambre;
     }
 
+    @DeleteMapping("/remove-chambre/{chambre-id}")
     public void removeChambre(@PathVariable("chambre-id") Long chId) {
         chamberService.removechambre(chId);
     }
